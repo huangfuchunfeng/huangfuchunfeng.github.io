@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>mini-vue</title>
+	</head>
+	<body>
+		<div id="app">
+			<p>name: <input id="name" /></p>
+			<p>val: <input id="val" /></p>
+			<p>list: <input id="list" /></p>
+		</div>
+		<script>
+			const model = {
+				name: 'vue',
+				data: {
+					val: 1,
+				},
+				list: [1],
+			}
+			function observe(obj) {
+				Object.keys(obj).forEach((key) => {
+					if (typeof obj[key] === 'object') {
+						observe(obj[key])
+					} else {
+						defineReactive(obj, key, obj[key])
+					}
+				})
+			}
+			function defineReactive(obj, key, val) {
+				Object.defineProperty(obj, key, {
+					get() {
+						return val
+					},
+					set(newVal) {
+						val = newVal
+						observe(newVal)
+					},
+				})
+			}
+			function compile(val) {
+				document.getElementById('name').value = val
+			}
+			document.getElementById('name').onchange = function onchange(e) {
+				model.name = e.target.value
+			}
+			observe(model)
+		</script>
+	</body>
+</html>

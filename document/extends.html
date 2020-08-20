@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承</title>
+  </head>
+  <body>
+    <script>
+      function Person() {
+        this.name = '杜鹿'
+        this.age = '18'
+        this.sex = '男'
+      }
+      Person.prototype.eat = function() {
+        console.log('吃米饭')
+      }
+      Person.prototype.say = function() {
+        console.log('中文')
+      }
+      Person.prototype.getName = function() {
+        console.log(this.name)
+      }
+      var person = new Person()
+      function Zhujun() {
+        // Person.call(this)
+        this.name='朱军'
+        // this.age = '28'
+      }
+      Zhujun.prototype = person
+      Zhujun.prototype.constructor = Zhujun
+      Zhujun.prototype.eat = function() {
+        console.log('吃馒头')
+      }
+      Zhujun.prototype.getName = function() {
+        console.log(this.name)
+      }
+      var zj = new Zhujun()
+    </script>
+  </body>
+</html>
