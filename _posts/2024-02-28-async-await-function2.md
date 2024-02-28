@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'async await function'
-date: 2024-02-28 13:47:00
+date: 2024-02-28 00:00:00
 categories: JavaScript
 author: 皇甫春风
 tags: js

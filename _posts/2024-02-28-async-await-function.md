@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'windows nginx 简单配置'
-date: 2020-06-22 00:00:00
+title: 'async await function 异步函数'
+date: 2024-02-28 00:00:00
 categories: Nginx
 author: 皇甫春风
 tags: js Nginx
