@@ -1,12 +1,11 @@
 ---
 layout: post
-title: 'async  await function'
+title: 'async await function'
 date: 2024-02-28 13:47:00
 categories: JavaScript
 author: 皇甫春风
 tags: js
 ---
-
 
 # 异步函数
 
