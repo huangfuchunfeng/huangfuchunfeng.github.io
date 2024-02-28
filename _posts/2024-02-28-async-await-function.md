@@ -6,6 +6,8 @@ categories: JavaScript
 author: 皇甫春风
 tags: js
 ---
+
+
 # 异步函数
 
 >  `async function` 声明创建一个绑定到给定名称的新异步函数。
