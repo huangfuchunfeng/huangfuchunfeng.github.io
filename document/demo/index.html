@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      width: 600px;
+      background-color: red;
+      border: 15px solid blue;
+    }
+
+    .parent2 {
+      width: 600px;
+      background-color: red;
+      border: 15px solid blue;
+      overflow: hidden;
+    }
+
+    .child {
+      width: 200px;
+      height: 200px;
+      float: left;
+      border: 15px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+  <div style="margin-top: 300px;"></div>
+  <div class="parent2" id="parent2">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+  <button id="button">aa</button>
+  <script>
+    // var button = document.getElementById('button')
+    // button.addEventListener('click', function () {
+    //   button.remove()
+    // })
+    window.a = 2
+    var obj = {
+      a: 10,
+      fn: function () {
+        console.log(this.a)
+      },
+      fn1: () => {
+        console.log(this.a)
+      }
+    }
+    console.log(b)
+    var b = 11
+
+  </script>
+</body>
+
+</html>
