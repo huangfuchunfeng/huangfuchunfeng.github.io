@@ -44,19 +44,40 @@
     // button.addEventListener('click', function () {
     //   button.remove()
     // })
-    window.a = 2
-    var obj = {
-      a: 10,
-      fn: function () {
-        console.log(this.a)
-      },
-      fn1: () => {
-        console.log(this.a)
-      }
-    }
-    console.log(b)
-    var b = 11
+    // window.a = 2
+    // var obj = {
+    //   a: 10,
+    //   fn: function () {
+    //     console.log(this.a)
+    //   },
+    //   fn1: () => {
+    //     console.log(this.a)
+    //   }
+    // }
+    // console.log(b)
+    // var b = 11
 
+    console.log("Start");
+
+    setTimeout(() => {
+      console.log("Timeout1");
+    }, 0);
+
+    setTimeout(() => {
+      console.log("Timeout2");
+    });
+
+    Promise.resolve().then(() => {
+      console.log("Promise 1");
+    }).then(() => {
+      for (let i = 0; i < 1; i++) {
+        console.log(`我是for循环的第${i}个`)
+      }
+    });
+
+
+
+    console.log("End");
   </script>
 </body>
 
