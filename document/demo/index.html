@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <style>
     .parent {
@@ -33,7 +33,7 @@
     <div class="child"></div>
     <div class="child"></div>
   </div>
-  <div style="margin-top: 300px;"></div>
+  <div style="margin-top: 300px"></div>
   <div class="parent2" id="parent2">
     <div class="child"></div>
     <div class="child"></div>
@@ -57,27 +57,68 @@
     // console.log(b)
     // var b = 11
 
-    console.log("Start");
+    // console.log(css)
+    // css = 2
+    // console.log(css)
+  </script>
+  <script>
+    // async function fn1() {
+    //   console.log('fn1')
+    //   return 'fn1'
+    // }
+    // async function fn2() {
+    //   await fn1()
+    //   console.log('fn2')
+    // }
 
-    setTimeout(() => {
-      console.log("Timeout1");
-    }, 0);
+    // setTimeout(() => {
+    //   console.log('Timeout1')
+    // }, 0)
 
-    setTimeout(() => {
-      console.log("Timeout2");
-    });
+    // setTimeout(() => {
+    //   console.log('Timeout2')
+    // }, 0)
+    // console.log('Start')
+    // queueMicrotask(() => {
+    //   fn2()
+    // })
 
-    Promise.resolve().then(() => {
-      console.log("Promise 1");
-    }).then(() => {
-      for (let i = 0; i < 1; i++) {
-        console.log(`我是for循环的第${i}个`)
+    // Promise.resolve()
+    //   .then(() => {
+    //     console.log('Promise 1')
+    //   })
+    //   .then(() => {
+    //     for (let i = 0; i < 1; i++) {
+    //       console.log(`我是for循环的第${i}个`)
+    //     }
+    //   })
+
+
+    // console.log('End')
+  </script>
+  <script>
+    const log = console.log
+    let callback = () => log("1");
+
+    let urgentCallback = () => log("2");
+
+    let doWork = () => {
+      let result = 1;
+
+      queueMicrotask(urgentCallback);
+
+      for (let i = 2; i <= 10; i++) {
+        result *= i;
       }
-    });
+      return result;
+    };
+
+    log("3");
+    setTimeout(callback, 0);
+    log(`10!  = ${doWork()}`);
+    log("4");
 
 
-
-    console.log("End");
   </script>
 </body>
 
